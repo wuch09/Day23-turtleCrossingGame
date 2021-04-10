@@ -14,18 +14,19 @@ class Scoreboard(Turtle):
         self.penup()
         self.hideturtle()
         self.goto(PROMPT_POSITION)
-        self.write("Level: ", align="center", font=LEVEL_FONT)
-        self.update_level()
+        self.write(f"Level: {self.level}", align="center", font=LEVEL_FONT)
+
 
     def level_up(self):
         self.level +=1
 
     def update_level(self):
+        # self.clear()
+        # self.goto(PROMPT_POSITION)
+        # self.write("Level: ", align="center", font=LEVEL_FONT)
+
         self.clear()
-        self.goto(PROMPT_POSITION)
-        self.write("Level: ", align="center", font=LEVEL_FONT)
-        self.goto(LEVEL_POSITION)
-        self.write(self.level, align="center", font=LEVEL_FONT)
+        self.write(f"Level: {self.level}", align="center", font=LEVEL_FONT)
 
     def game_over(self):
         self.goto(GAME_OVER_POSITION)
