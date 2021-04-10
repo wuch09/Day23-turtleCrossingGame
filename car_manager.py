@@ -9,6 +9,7 @@ MOVE_INCREMENT = 10
 class CarManager:
     def __init__(self):
         self.car_queue = []
+        self.car_speed = STARTING_MOVE_DISTANCE
 
     def generate_car(self):
         chance = random.randint(1, 6)
@@ -23,12 +24,16 @@ class CarManager:
 
     def move(self, player):
         for car in self.car_queue:
-            car.backward(STARTING_MOVE_DISTANCE)
+            car.backward(self.car_speed)
             if car.xcor() < -340:
                 self.car_queue.remove(car)
             if car.distance(player) < 20:
                 return False
         return True
+
+    def level_up(self):
+        self.car_speed += MOVE_INCREMENT
+
 
 
 
