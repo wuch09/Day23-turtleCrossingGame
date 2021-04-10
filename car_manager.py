@@ -10,7 +10,6 @@ class CarManager:
     def __init__(self):
         self.car_queue = []
 
-
     def generate_car(self):
         chance = random.randint(1, 6)
         if chance == 1:

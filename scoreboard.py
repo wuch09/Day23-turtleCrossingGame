@@ -4,6 +4,8 @@ PROMPT_POSITION = (-240, 260)
 LEVEL_POSITION = (-180, 260)
 GAME_OVER_POSITION = (0, 0)
 GAME_OVER_FONT = ("Courier", 40, "bold")
+
+
 class Scoreboard(Turtle):
     def __init__(self):
         super().__init__()
@@ -14,7 +16,6 @@ class Scoreboard(Turtle):
         self.goto(PROMPT_POSITION)
         self.write("Level: ", align="center", font=LEVEL_FONT)
         self.update_level()
-
 
     def level_up(self):
         self.level +=1
