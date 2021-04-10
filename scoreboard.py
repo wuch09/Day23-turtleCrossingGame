@@ -16,11 +16,13 @@ class Scoreboard(Turtle):
         self.update_level()
 
 
-
     def level_up(self):
         self.level +=1
 
     def update_level(self):
+        self.clear()
+        self.goto(PROMPT_POSITION)
+        self.write("Level: ", align="center", font=LEVEL_FONT)
         self.goto(LEVEL_POSITION)
         self.write(self.level, align="center", font=LEVEL_FONT)
 

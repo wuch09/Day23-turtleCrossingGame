@@ -22,11 +22,15 @@ class CarManager:
             new_car.goto(340, random.randint(-250, 250))
             self.car_queue.append(new_car)
 
-    def move(self):
+    def move(self, player):
         for car in self.car_queue:
             car.backward(STARTING_MOVE_DISTANCE)
             if car.xcor() < -340:
                 self.car_queue.remove(car)
+            if car.distance(player) < 20:
+                return False
+        return True
+
 
 
 
